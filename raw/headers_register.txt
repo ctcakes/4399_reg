@@ -1,0 +1,8 @@
+HTTP/1.1 202 Accepted
+Date: Fri, 11 Sep 2026 09:19:25 GMT
+Content-Type: text/plain; charset=utf-8
+Server: ATS/10.1.0
+Age: 0
+Transfer-Encoding: chunked
+Connection: keep-alive
+

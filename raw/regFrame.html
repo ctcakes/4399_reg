@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<script type="text/javascript">
+	dd = document.domain.split('.');
+	document.domain = dd[dd.length - 2] + '.' + dd[dd.length - 1];
+</script>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/cryptojs-aes.js?v=320"></script> 
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/validation.js?v=320"></script>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/messenger.js?v=320"></script>
+<link rel="stylesheet" href="//ptlogin.3304399.net/resource/css/init.css?v=320" type="text/css"/>
+<link rel="stylesheet" href="//ptlogin.3304399.net/resource/css/base.css?v=320" type="text/css"/>
+</head>
+
+
+
+
+
+
+<script type="text/javascript">
+if (Messenger.shouldOpen) {
+	var msnger = new Messenger({ target: window.parent });
+}
+</script>
+<script>
+	if(Messenger.shouldOpen){
+		msnger.emit("isAutoRegSuccess",false);
+	}else{
+		window.parent.isAutoRegSuccess=false;
+	}
+		var isPhoneReg = false;
+</script>
+
+
+<body>
+<!--第三方注册-->
+<div   >
+	
+	<div class="login_module w352" id="popup_reg_div">
+		<div class="bd login_vertical">
+			<a id = "" class="link_phone_login" href='javascript:eventHandles.showPopupPhoneLogin();' title="已有账号，立即登录">已有账号，立即登录></a>
+			<form onSubmit="return check_reg_new('Msg', 'j-password', 'j-passwordveri', reg_eula_agree);" id="reg_form" name="reg_form" method="post" action="/ptlogin/register.do">
+				<fieldset>
+					<input type="hidden" name="postLoginHandler" value="refreshParent" />
+					<input type="hidden" name="displayMode" value="" />
+					<input type="hidden" name="bizId" value="" />
+					<input type="hidden" id="appId" name="appId" value="my" />
+					<input type="hidden" name="gameId" value="" />
+					<input type="hidden" id="cid" name="cid" value="" />
+					<input type="hidden" name="externalLogin" value="qq" />
+					<input type="hidden" id="aid" name="aid" value="" />
+					<input type="hidden" id="ref" name="ref" value="" />
+					<input type="hidden" name="css" value="" />
+					<input type="hidden" name="redirectUrl" value="" />
+					<input type="hidden" id="regMode" name="regMode" value="0" />
+					<input type="hidden" name="sessionId" value="" />
+					<input type="hidden" name="regIdcard" value="true" />
+					<input type="hidden" name="noEmail" value="" />
+					<input type="hidden" name="crossDomainIFrame" value="" />
+					<input type="hidden" name="crossDomainUrl" value="" />
+					<input type="hidden" name="mainDivId" value="popup_reg_div" />
+					<input type="hidden" name="showRegInfo" value="true" />
+					<input type="hidden" name="includeFcmInfo" value="false" />
+					<input type="hidden" name="expandFcmInput" value="true" />
+				    <input type="hidden" name="fcmFakeValidate" value="false" />
+					<input type="hidden" name="realnameValidate" value="true" />
+					<input type="hidden" name="userNameLabel" value="4399&#29992;&#25143;&#21517;" />
+					<input type="hidden" name="level" value="" id="j-level"/>
+                    <input type="hidden" name="sec" value="1" id="j-sec"/>
+					<input type="hidden" name="password" value="" id="j-psd"/>
+					<input type="hidden" name="passwordveri" value="" id="j-psd-veri"/>
+					<input type="hidden" name="iframeId" value=""/>
+						<input type="hidden" name="realname" value="" id="j-xm-name"/>
+						<input type="hidden" name="idcard" value="" id="j-xm-idcard"/>
+ 							
+					<div id="Msg" class="login_hor login_err_tip">
+					</div>
+					<div class="login_hor clearfix">
+						<label id = "rf_label_username"><em class="login_required"> *</em></label>
+						<label id = "rf_label_simple_username"><em class="login_required"> *</em></label>
+						<input type="text" style="visibility:hidden;position:fixed;float:left;width:0px;height:1px;"/>
+						<input type="text" autocomplete="off" id="j-username"
+							checkstate="err"
+							tip="" err="" class="login_ipt iptw2"
+							onfocus="showInputTip(this,regMode);if(document.getElementById('sendcode')){document.getElementById('sendcode').style.display='block';}"
+							onblur="
+										checkRegUsername(this, appId, regMode);
+								"/>
+
+							<span class="input_tip" id = "rf_label_usernametip" ></span>
+							</div>
+							
+
+						<div class="login_hor clearfix">
+							<label id = "rf_label_password">密码<em class="login_required"> *</em></label>
+							<input type="password" id="j-password" value="" autocomplete="new-password"  checkstate="err" tip="长度为6-20个字符,区分大小写" err="格式错误，必须由6~20个字符组成" class="login_ipt iptw2"  onfocus="showInputTip(this)" />
+							<span class="input_tip" id = "rf_label_passwordtip"></span>
+						</div>
+						<div class="login_hor clearfix">
+							<label id = "rf_label_verifypasswd">再次输入密码<em class="login_required"> *</em></label>
+							<input  id="j-passwordveri" value="" autocomplete="new-password" tip="" type="password" class="login_ipt iptw2"  err="两次密码不一致" value="" onfocus="showInputTip(this)" ／>
+							<span class="input_tip" id = "rf_label_verifypasswdtip"></span>
+						</div>
+
+
+						<div class="login_hor clearfix">
+							<label id = "rf_label_realname">真实姓名<em class="login_required"> *</em></label>
+							<input type="text" id="j-realname" autocomplete="off" class="login_ipt iptw2"
+								checkstate="err"
+								tip="防沉迷要求填写真实姓名<!--<em class='m_idcard_tip' id='j-idcanrd-name'>,如:'顾桓璋'</em>-->"
+								err="不正确的真实姓名格式"
+								value=""
+								onfocus="showInputTip(this)"
+								onblur="checkInput(this,'realname',true, '顾桓璋')"/>
+							<span class="input_tip" id = "rf_label_realnametip">防沉迷要求填写真实姓名<!--<em class="m_idcard_tip" id="j-idcanrd-name">,如:'顾桓璋'</em>--></span>
+						</div>
+						<div class="login_hor clearfix">
+							<label id = "rf_label_cardid">身份证号<em class="login_required"> *</em></label>
+							<input type="text" id="j-idcard"  autocomplete="off" class="login_ipt iptw2"
+								checkstate="err"
+								tip="<a href='https://u.4399.com/chat/im/zhkf/zhrz' target='_blank' class='howSetIdcard_link'>实名认证遇到问题？</a><!--请填写身份证号码<em id='j-idcanrd-num' class='m_idcard_tip'>,如:'330100194207072598' </em>-->"
+								err="不正确的身份证号"
+								value=""
+								onfocus="showInputTip(this)"
+								onblur="checkInput(this,'idcard', true, '330100194207072598');"/>
+							<span class="input_tip" id = "rf_label_cardidtip"><a href='https://u.4399.com/chat/im/zhkf/zhrz' target='_blank' class='howSetIdcard_link'>实名认证遇到问题？</a><!--请填写身份证号码<em id="j-idcanrd-num" class="m_idcard_tip">,如:'330100194207072598' </em>--></span>
+						</div>
+						
+						
+						<div class="login_hor clearfix"  style="display:none"></div>
+						
+						<!--折叠-->
+
+						<div class="login_hor unilogin_box clearfix">
+							<input type="submit" value="" class="ptlogin_register" id="j-reg-submit-btn" />
+							<a class="login_feedback" href="https://u.4399.com/chat/im/zhkf/zcdl" title="注册问题反馈" target="_blank">注册问题反馈</a>
+							<a class="register_foreign" href="https://u.4399.com/sso/intl/register.html?refer=/profile/realname.html" title="港澳台/海外用户注册" target="_blank">港澳台/海外用户注册></a>
+						</div>
+						<div class="login_hor clearfix">
+							<div class="login_tip flogin_tip">
+							      
+						        <input id="reg_eula_agree" type="checkbox" name="reg_eula_agree" oncheck="checkInput(this,'reg_eula_agree')"><label id="reg_eula_info">已同意</label>
+						        
+						        <div class="agr_arr" id="agrbtn">
+						        	<div class="agrbox" id="agrbox">
+										<i class="wbor"></i>
+										<span class="login_protocal">
+										<a class="eual_link" target="_blank" href="https://ptlogin.4399.com/resource/protocol.html?type=1&aids=1,3,6,7">《用户协议》</a>
+										和
+										<a class="eual_link" target="_blank" href="https://ptlogin.4399.com/resource/protocol.html?type=2&aids=2,10,37">《隐私政策》</a>
+										</span>
+						        	</div>
+						        </div>
+							</div>
+						</div>
+						<div class="login_hor clearfix no_gap">
+							<div class="login_tip flogin_tip nflogin_tip">
+									<input id="login_autoLogin" type="checkbox" name="autoLogin" /><label for="login_autoLogin" id="reg_autoLogin_tip">自动登录</label>
+								</div>
+							</div>
+					</fieldset>
+				</form>
+				<script type="text/javascript">
+					//快速注册框位置上移
+					// if (parent.document.getElementById("loginDiv")) {
+					// 	var offset = 50;
+					// 	if (typeof(parent.unionLoginProps.__regFrameOffset) != 'undefined'){
+					// 		offset = parent.unionLoginProps.__regFrameOffset;
+					// 	}
+					// 	parent.document.getElementById("loginDiv").style.top = (parent.unionLoginProps.getPopupUcenterTop() - offset) + "px";
+					// }
+						
+					try {document.reg_form.username.focus();} catch(err) {}
+				</script>
+				<script type="text/tmpl" id="fcaptchaTmpl">
+					 <div class="fdialog">
+				        <div class="dialog_hd">
+				            <h2 class="tit">请输入验证码</h2>
+				            <a href="javascript:void(0);" class="btn_close j-btn_close"></a>
+				        </div>
+				        <div class="dialog_bd">
+				            <div class="ftip j-ftip"></div>
+				            <div class="box_fipt">
+				                <input type="text" id="fCaptcha" autocomplete="off" name="fCaptcha" class="iptxt" value="" placeholder="请输入验证码" >
+				            </div>
+				            <div class="box_fimg clearfix">
+				                <img id="j-captcha1" class="login_captcha" src="//ptlogin.4399.com/ptlogin/captcha.do?captchaId=<%= captchaId %>" captchaId="<%= captchaId %>" />
+				                <span class="input_tip">点击图片换一张</span>
+				            </div>
+				            <div class="box_opt">
+				                <a href="javascript:void(0);" class="btn_opt btn_cancel j-btn_close">取消</a>
+				                <a href="javascript:void(0);" class="btn_opt btn_sure j-btn_sure">确定</a>
+				            </div>
+				        </div>
+				    </div>
+				</script>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/jquery-1.4.4.min.js?v=320"></script> 
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/ks.dialog.js?v=320"></script>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/baiduTemplate.js?v=320"></script>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/checkCookie.js?v=320"></script>
+	<script type="text/javascript">
+		if(Messenger.shouldOpen){
+			window.onload = function(){
+				msnger.emit("setIFrameHeight",{iframeId : "",height:document.body.offsetHeight});
+			}
+		}
+		eventHandles.initIFrameReady();
+	</script>
+<script type="text/javascript" src="//ptlogin.3304399.net/resource/regFrame.js?v=320"></script>
+</html>
