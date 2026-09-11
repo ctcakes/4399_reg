@@ -48,6 +48,8 @@ pip install -r src/requirements.txt
 
 Clash Verge->订阅->右键->编辑规则->匹配域名关键字 (DOMAIN-KEYWORD)->规则内容输入4399->代理策略选择一个节点(不要使用DIRECT)->添加前置规则->保存即可。
 
+![alt text](image.png)
+
 不使用代理会导致弹出图形验证码。
 
 ### 3.1 批量生成
